@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "autocrossbow",
+  "version": "${version}",
+  "name": "autocrossbow",
+  "description": "",
+  "authors": ["smoky"],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/autocrossbow/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.smoky.autocrossbow.client.AutocrossbowDataGenerator"
+    ],
+    "client": [
+      "org.smoky.autocrossbow.client.AutocrossbowClient"
+    ],
+    "main": [
+      "org.smoky.autocrossbow.Autocrossbow"
+    ]
+  },
+  "mixins": [
+    "autocrossbow.mixins.json",
+    {
+      "config": "autocrossbow.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
